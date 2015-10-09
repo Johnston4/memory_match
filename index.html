@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <link href="https://code.jquery.com/jquery-2.1.4.min.js">
-    <link href="http://learning-fuze.github.io/memory_match/v0.1/script.js">
 </head>
 <body>
     <div class="header-container">
         <div>
-            <img class="logo" src="images/cloud2.jpg">
+            <img class="logo" src="images/cloud3.jpeg">
         </div>
         <ul class="options">
             <li>
@@ -22,6 +23,9 @@
                 </a>
             </li>
         </ul>
+        <div class="calc">
+            <img src="images/calc.gif" width="9%">
+        </div>
     </div>
 <div class="stats-container">
     <div class="games-played">
@@ -38,159 +42,152 @@
     </div>
     <button class="reset">Reset Game</button>
 </div>
-
-    <div class="game-area">
-
+    <div id="game-area">
         <div class="card">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/susuwatari.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card">
             <div class="front">
-                <img class="card-back" src="images/ashitaka.jpg" >
+                <img class="card-front" src="images/ashitaka.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card">
             <div class="front">
-                <img class="card-back" src="images/catbus.jpg" >
+                <img class="card-front" src="images/catbus.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card">
             <div class="front">
-                <img class="card-back" src="images/haku.jpg" >
+                <img class="card-front" src="images/haku.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card">
             <div class="front">
-                <img class="card-back" src="images/howl.jpg" >
+                <img class="card-front" src="images/howl.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card">
             <div class="front">
-                <img class="card-back" src="images/jiji.jpg" >
+                <img class="card-front" src="images/jiji.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
 
         <div class="card second-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/mononoke.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card second-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/ponyo.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card second-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/shishigami.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card second-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/susuwatari.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card second-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/ashitaka.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card second-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/catbus.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card third-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/haku.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card third-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/howl.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card third-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/jiji.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card third-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/mononoke.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card third-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/ponyo.jpg" >
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
         <div class="card third-row">
             <div class="front">
-                <img class="card-back" src="images/susuwatari.jpg" >
+                <img class="card-front" src="images/shishigami.jpg">
             </div>
             <div class="back">
-                <img class="card-front" src="images/front.jpg">
+                <img class="card-back" src="images/front.jpg">
             </div>
         </div>
-
     </div>
-
-
-
-
 </body>
 </html>

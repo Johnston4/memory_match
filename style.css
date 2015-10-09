@@ -1,30 +1,46 @@
+.calc {
+    position: relative;
+    left: 4%;
+}
+
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: url('images/howl-background-lg.jpg') no-repeat;
+}
+
+
 .header-container {
     position: relative;
     width: 100vw;
-    height: 8vw;
+    height: 10vw;
 }
 
 .logo {
-    width: 10vw;
+    width: 15vw;
     float: left;
 }
 
 .options {
-    float: left;
-    width: 15vw;
-    list-style-image: url('images/red-bow-sml.jpg');
+
+    display: inline-block;
+    width: 50vw;
     margin: 0;
 
 }
 
 .options li {
-    font-size: 1.5vw;
-    list-style-type: none;
+    display: inline;
+    font-size: 2vw;
     padding: 0;
-    margin: .5vw;
+
 }
 
-
+.options li a {
+    margin: 1% 0;
+}
 
 .options li a {
     text-decoration: none;
@@ -40,24 +56,24 @@
 }
 
 
-.game-area {
+#game-area {
     float: left;
-    width: 65vw;
-    height: 65vh;
+    width: 60vw;
+    height: 60vh;
     margin: 0;
+    perspective: 900px;
+    -webkit-perspective: 900px;
 }
 
-.game-area .card  {
+#game-area .card  {
     width: 9vw;
     height: 11vw;
     margin: .5%;
 }
 
 .card {
-    perspective: 1000px;
     position: relative;
     display: inline-block;
-
 }
 
 .second-row {
@@ -70,8 +86,8 @@
     #top: 7vw;
 }
 
-.card-front {
-    border: 5px solid #F1D2B4;
+ .front, .card-front {
+
     box-sizing: border-box;
     position: absolute;
     width: 100%;
@@ -80,39 +96,37 @@
     #transform: scaleX(-1);
 
 }
+ .back, .card-back {
 
-.card-back {
-    border: 5px solid lightblue;
     box-sizing: border-box;
     position: absolute;
     width: 100%;
-    height: 100%
+    height: 100%;
+     z-index: 99;
 }
 
 .card:hover {
-    transform: rotateY(180deg);
-    transition-duration: 2s;
+    #transform: rotateY(180deg);
+    #transition-duration: 2s;
 }
 
 .card {
-    transition-duration: .4s;
-    transform-style: preserve-3d;
-    position: relative;
+    #transition-duration: .4s;
+    #transform-style: preserve-3d;
+    #position: relative;
 }
 
-.card-back, .card-front {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
+ .back, .front {
+    #backface-visibility: hidden;
+    #position: absolute;
+    #top: 0;
+    #left: 0;
 }
 
-.card-back {
-    z-index: 2;
-    /* for firefox 31 */
-    #transform: rotateY(0deg);
+ .front {
+    #z-index: 2;
 }
 
-.card-back {
-    transform: rotateY(180deg);
+.front {
+    #transform: rotateY(180deg);
 }
