@@ -1,24 +1,24 @@
 .header-container {
     position: relative;
     width: 100vw;
-    height: 10vw;
+    height: 8vw;
 }
 
 .logo {
-    width: 15vw;
+    width: 10vw;
     float: left;
 }
 
 .options {
     float: left;
-    width: 20vw;
+    width: 15vw;
     list-style-image: url('images/red-bow-sml.jpg');
     margin: 0;
 
 }
 
 .options li {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     list-style-type: none;
     padding: 0;
     margin: .5vw;
@@ -33,7 +33,86 @@
 
 .stats-container {
     position: relative;
+    float: left;
     display: inline;
     width: 20%;
     height: 80vh;
+}
+
+
+.game-area {
+    float: left;
+    width: 65vw;
+    height: 65vh;
+    margin: 0;
+}
+
+.game-area .card  {
+    width: 9vw;
+    height: 11vw;
+    margin: .5%;
+}
+
+.card {
+    perspective: 1000px;
+    position: relative;
+    display: inline-block;
+
+}
+
+.second-row {
+    position: relative;
+    #top: 4vw;
+}
+
+.third-row {
+    position: relative;
+    #top: 7vw;
+}
+
+.card-front {
+    border: 5px solid #F1D2B4;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    #transform: scaleX(-1);
+
+}
+
+.card-back {
+    border: 5px solid lightblue;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+    transition-duration: 2s;
+}
+
+.card {
+    transition-duration: .4s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card-back, .card-front {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.card-back {
+    z-index: 2;
+    /* for firefox 31 */
+    #transform: rotateY(0deg);
+}
+
+.card-back {
+    transform: rotateY(180deg);
 }
