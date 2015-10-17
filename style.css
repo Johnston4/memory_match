@@ -16,12 +16,17 @@ body {
     -webkit-perspective: 900px;
 }
 
-#game-area .card  {
+#game-area .card {
     position: relative;
     width: 9vw;
     height: 11vw;
     margin: .5%;
 }
+
+.hidden_cards {
+    display: none;
+}
+
 .card {
     position: relative;
     display: inline-block;
