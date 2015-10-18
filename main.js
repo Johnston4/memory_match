@@ -47,10 +47,9 @@ function card_clicked(card_element) {
             console.log('Is it a match? No it is ' + (first_card_clicked == second_card_clicked));
             setTimeout(function() {
                 $(first_card_div_element).removeClass('hidden_cards'); $(second_card_div_element).removeClass('hidden_cards');
-            }, 3000);
+            }, 2000);
             first_card_clicked = null;
             second_card_clicked = null;
-
         }
     }
 }
