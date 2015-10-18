@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="main.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header-container">
+    <div>
+        <img class="logo" src="images/cloud-clear.gif">
+    </div>
+    <ul class="options">
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                Settings
+            </a>
+        </li>
+    </ul>
+    <div class="calc">
+        <img src="images/calc-hd.gif" width="15%">
+    </div>
+</div>
+<div class="stats-container">
+    <div class="games-played">
+        <p class="label">Games Played</p>
+        <p class="value"></p>
+    </div>
+    <div class="attempts">
+        <p class="label">Attempts</p>
+        <p class="value"></p>
+    </div>
+    <div class="accuracy">
+        <p class="label">Accuracy</p>
+        <p class="value"></p>
+    </div>
+    <button class="reset">Reset Game</button>
+</div>
+<div id="game-area">
+    <div class="card">
+        <div class="front">
+            <img class="card-front" src="images/sophie.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img class="card-front" src="images/sophie.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img class="card-front" src="images/howls-castle.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img class="card-front" src="images/howls-castle.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img class="card-front" src="images/heen-dog.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img class="card-front" src="images/heen-dog.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card second-row">
+        <div class="front">
+            <img class="card-front" src="images/howl.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card second-row">
+        <div class="front">
+            <img class="card-front" src="images/howl.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card second-row">
+        <div class="front">
+            <img class="card-front" src="images/calcifer-fire.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card second-row">
+        <div class="front">
+            <img class="card-front" src="images/calcifer-fire.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card second-row">
+        <div class="front">
+            <img class="card-front" src="images/turnip-head.png" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card second-row">
+        <div class="front">
+            <img class="card-front" src="images/turnip-head.png" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card third-row">
+        <div class="front">
+            <img class="card-front" src="images/markl.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card third-row">
+        <div class="front">
+            <img class="card-front" src="images/markl.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card third-row">
+        <div class="front">
+            <img class="card-front" src="images/witch.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card third-row">
+        <div class="front">
+            <img class="card-front" src="images/witch.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card third-row">
+        <div class="front">
+            <img class="card-front" src="images/sophie-old.jpg" >
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+    <div class="card third-row">
+        <div class="front">
+            <img class="card-front" src="images/sophie-old.jpg">
+        </div>
+        <div class="back" onclick="card_clicked(this)">
+            <img class="card-back" src="images/woodcard.jpg">
+        </div>
+    </div>
+</div>
+</body>
+</html>

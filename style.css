@@ -1,0 +1,109 @@
+.calc {
+    position: relative;
+    left: 2%;
+}
+
+.calc:hover {
+    transform: translate(20vw);
+    transition-duration: 5s;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: url('images/howl-background-lg.jpg') no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.hidden_cards {
+    display: none;
+}
+
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 20%;
+}
+
+.logo {
+    width: 15%;
+    float: left;
+}
+
+.options {
+
+    display: inline-block;
+    width: 50vw;
+    margin: 0;
+}
+
+.options li {
+    display: inline;
+    font-size: 2vw;
+    padding: 0;
+
+}
+
+.options li a {
+    margin: 1% 0;
+}
+
+.options li a {
+    text-decoration: none;
+    color: black;
+}
+
+.stats-container {
+    float: left;
+    display: inline;
+    width: 15%;
+    height: 80vh;
+}
+
+
+#game-area {
+    float: left;
+    width: 60vw;
+    height: 60vh;
+    margin: 0;
+    perspective: 900px;
+    -webkit-perspective: 900px;
+}
+
+#game-area .card  {
+    width: 9vw;
+    height: 11vw;
+    margin: .5%;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    background-color: black;
+}
+
+.second-row {
+    position: relative;
+}
+
+.third-row {
+    position: relative;
+}
+
+.front, .card-front {
+
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.back, .card-back {
+
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
