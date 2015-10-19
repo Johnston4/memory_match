@@ -7,7 +7,7 @@ var second_card_div_element = null;
 var noMatch = false;
 var matches = 0;
 var attempts = 0;
-var accuracy = null;
+var accuracy = 0;
 var games_played = 0;
 
 $(document).ready(display_stats);
@@ -27,7 +27,7 @@ function card_clicked(card_element) {
     else {
         console.log('this is the second card we clicked');
         attempts += 1;
-        console.log('number of attempts:'+attempts);
+        console.log('number of attempts:' + attempts);
         display_stats();
         second_card_div_element = card_element;
         var second_card = $(card_element).prev().find('img');
@@ -48,10 +48,7 @@ function card_clicked(card_element) {
             second_card_clicked = null;
             console.log('first_card_clicked, second_card_clicked is now... ' + first_card_clicked + ', ' + second_card_clicked + ' AGAIN.')
             if (match_counter == total_possible_matches) {
-
-
                 console.log('you win!');
-
                 games_played += 1;
                 console.log('games played: ' + games_played);
                 display_stats();
@@ -63,8 +60,9 @@ function card_clicked(card_element) {
         }
         else {
             console.log('Is it a match? No it is ' + (first_card_clicked == second_card_clicked));
-            setTimeout(function() {
-                $(first_card_div_element).removeClass('hidden_cards'); $(second_card_div_element).removeClass('hidden_cards');
+            setTimeout(function () {
+                $(first_card_div_element).removeClass('hidden_cards');
+                $(second_card_div_element).removeClass('hidden_cards');
             }, 2000);
             first_card_clicked = null;
             second_card_clicked = null;
@@ -72,12 +70,32 @@ function card_clicked(card_element) {
     }
 }
 
-function display_stats(){
+function display_stats() {
 
     $('#games_played_stat').text(games_played);
     $('#attempts_stat').text(attempts);
     console.log('number of attempts: ' + attempts);
-    accuracy = matches/attempts;
-    $('#accuracy_stat').text((accuracy*100) + '%');
+    accuracy = matches / attempts;
+    $('#accuracy_stat').text((accuracy * 100) + '%');
     console.log('number of accuracy IS ' + accuracy);
+}
+
+function reset_stats() {
+    accuracy = 0;
+    matches = 0;
+    attempts = 0;
+    display_stats();
+    reset_cards();
+}
+
+function reset_clicked() {
+    if (match_counter != total_possible_matches) {
+        games_played += 1;
+    }
+    reset_stats();
+    display_stats();
+}
+
+function reset_cards() {
+    $('.back').removeClass('hidden_cards');
 }
