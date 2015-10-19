@@ -5,6 +5,11 @@ var match_counter = 0;
 var first_card_div_element = null;
 var second_card_div_element = null;
 var noMatch = false;
+var matches = 0;
+var attempts = 0;
+var accuracy = 0;
+var games_played = 0;
+
 
 function card_clicked(card_element) {
     console.log("card_element is " + card_element);
@@ -20,6 +25,8 @@ function card_clicked(card_element) {
     }
     else {
         console.log('this is the second card we clicked');
+        attempts += 1;
+        console.log('number of attempts:'+attempts);
         second_card_div_element = card_element;
         var second_card = $(card_element).prev().find('img');
         var second_front_card_image = $(second_card).attr('src');
@@ -30,7 +37,11 @@ function card_clicked(card_element) {
         if (first_card_clicked == second_card_clicked) {
             console.log('Is it a match? Yes it is ' + (first_card_clicked == second_card_clicked));
             match_counter += 1;
+            matches += 1;
+            accuracy = (matches/attempts)*100 + '%';
+            console.log('current accuracy is ' + accuracy);
             console.log('match_counter value is ' + match_counter);
+            console.log('matches value is ' + matches);
             first_card_clicked = null;
             second_card_clicked = null;
             console.log('first_card_clicked, second_card_clicked is now... ' + first_card_clicked + ', ' + second_card_clicked + ' AGAIN.')
@@ -50,5 +61,9 @@ function card_clicked(card_element) {
             first_card_clicked = null;
             second_card_clicked = null;
         }
+    }
+    function display_stats(){
+        $('.attempts.value').add(attempts);
+
     }
 }
