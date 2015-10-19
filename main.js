@@ -7,9 +7,10 @@ var second_card_div_element = null;
 var noMatch = false;
 var matches = 0;
 var attempts = 0;
-var accuracy = 0;
+var accuracy = null;
 var games_played = 0;
 
+$(document).ready(display_stats);
 
 function card_clicked(card_element) {
     console.log("card_element is " + card_element);
@@ -27,6 +28,7 @@ function card_clicked(card_element) {
         console.log('this is the second card we clicked');
         attempts += 1;
         console.log('number of attempts:'+attempts);
+        display_stats();
         second_card_div_element = card_element;
         var second_card = $(card_element).prev().find('img');
         var second_front_card_image = $(second_card).attr('src');
@@ -34,19 +36,25 @@ function card_clicked(card_element) {
         second_card_clicked = second_front_card_image;
         console.log('second_card_clicked equals ' + second_card_clicked);
         console.log('first card clicked equals ' + first_card_clicked);
+
         if (first_card_clicked == second_card_clicked) {
             console.log('Is it a match? Yes it is ' + (first_card_clicked == second_card_clicked));
             match_counter += 1;
             matches += 1;
-            accuracy = (matches/attempts)*100 + '%';
-            console.log('current accuracy is ' + accuracy);
+            console.log('MATCH is: ' + matches);
             console.log('match_counter value is ' + match_counter);
-            console.log('matches value is ' + matches);
+            display_stats();
             first_card_clicked = null;
             second_card_clicked = null;
             console.log('first_card_clicked, second_card_clicked is now... ' + first_card_clicked + ', ' + second_card_clicked + ' AGAIN.')
             if (match_counter == total_possible_matches) {
+
+
                 console.log('you win!');
+
+                games_played += 1;
+                console.log('games played: ' + games_played);
+                display_stats();
                 console.log(alert('you win!'));
             }
             else {
@@ -62,8 +70,14 @@ function card_clicked(card_element) {
             second_card_clicked = null;
         }
     }
-    function display_stats(){
-        $('.attempts.value').add(attempts);
+}
 
-    }
+function display_stats(){
+
+    $('#games_played_stat').text(games_played);
+    $('#attempts_stat').text(attempts);
+    console.log('number of attempts: ' + attempts);
+    accuracy = matches/attempts;
+    $('#accuracy_stat').text((accuracy*100) + '%');
+    console.log('number of accuracy IS ' + accuracy);
 }

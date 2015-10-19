@@ -24,21 +24,21 @@
         </li>
     </ul>
     <div class="calc">
-        <img src="images/calc-hd.gif" width="15%">
+        <img src="" width="15%">
     </div>
 </div>
-<div class="stats-container">
+<div class="stats-container" onload="display_stats()">
     <div class="games-played">
         <p class="label">Games Played</p>
-        <p class="value"></p>
+        <p class="value" id="games_played_stat"></p>
     </div>
     <div class="attempts">
         <p class="label">Attempts</p>
-        <p class="value"></p>
+        <p class="value" id="attempts_stat"></p>
     </div>
     <div class="accuracy">
         <p class="label">Accuracy</p>
-        <p class="value"></p>
+        <p class="value" id="accuracy_stat"></p>
     </div>
     <button class="reset">Reset Game</button>
 </div>
