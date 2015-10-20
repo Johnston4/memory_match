@@ -25,6 +25,7 @@ function card_clicked(card_element) {
         console.log('first card clicked is ' + first_card_clicked);
     }
     else {
+
         console.log('this is the second card we clicked');
         attempts += 1;
         console.log('number of attempts:' + attempts);
@@ -60,7 +61,9 @@ function card_clicked(card_element) {
         }
         else {
             console.log('Is it a match? No it is ' + (first_card_clicked == second_card_clicked));
+            noMatch = true;
             setTimeout(function () {
+                noMatch = false;
                 $(first_card_div_element).removeClass('hidden_cards');
                 $(second_card_div_element).removeClass('hidden_cards');
             }, 2000);
@@ -69,6 +72,11 @@ function card_clicked(card_element) {
         }
     }
 }
+
+function stop_clicking(){
+    noMatch = true
+}
+
 
 function display_stats() {
 
@@ -83,6 +91,7 @@ function display_stats() {
 function reset_stats() {
     accuracy = 0;
     matches = 0;
+    match_counter = 0;
     attempts = 0;
     display_stats();
     reset_cards();
