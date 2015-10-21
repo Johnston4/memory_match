@@ -9,10 +9,13 @@ var matches = 0;
 var attempts = 0;
 var accuracy = 0;
 var games_played = 0;
+var can_i_click_other_cards = true;
 
 $(document).ready(display_stats);
 
 function card_clicked(card_element) {
+    clicking_function();
+    console.log('Can I click other cards? ' + can_i_click_other_cards);
     console.log("card_element is " + card_element);
     $(card_element).addClass('hidden_cards');
     var front_card = $(card_element).prev().find('img');
@@ -61,9 +64,11 @@ function card_clicked(card_element) {
         }
         else {
             console.log('Is it a match? No it is ' + (first_card_clicked == second_card_clicked));
-            noMatch = true;
+            can_i_click_other_cards = false;
+            clicking_function();
+            console.log('Can I click other cards? ' + can_i_click_other_cards);
             setTimeout(function () {
-                noMatch = false;
+                can_i_click_other_cards = true;
                 $(first_card_div_element).removeClass('hidden_cards');
                 $(second_card_div_element).removeClass('hidden_cards');
             }, 2000);
@@ -72,13 +77,13 @@ function card_clicked(card_element) {
         }
     }
 }
-
-function stop_clicking(){
-    noMatch = true
+function clicking_function(){
+    if (first_card_clicked != second_card_clicked){
+        return can_i_click_other_cards;
+    }
 }
 
-
-function display_stats() {
+function display_stats(){
 
     $('#games_played_stat').text(games_played);
     $('#attempts_stat').text(attempts);
