@@ -14,7 +14,10 @@ var can_i_click_other_cards = true;
 $(document).ready(display_stats);
 
 function card_clicked(card_element) {
-    clicking_function();
+    if (!can_i_click_other_cards)
+    {
+        return;
+    }
     console.log('Can I click other cards? ' + can_i_click_other_cards);
     console.log("card_element is " + card_element);
     $(card_element).addClass('hidden_cards');
@@ -65,7 +68,6 @@ function card_clicked(card_element) {
         else {
             console.log('Is it a match? No it is ' + (first_card_clicked == second_card_clicked));
             can_i_click_other_cards = false;
-            clicking_function();
             console.log('Can I click other cards? ' + can_i_click_other_cards);
             setTimeout(function () {
                 can_i_click_other_cards = true;
@@ -77,18 +79,15 @@ function card_clicked(card_element) {
         }
     }
 }
-function clicking_function(){
-    if (first_card_clicked != second_card_clicked){
-        return can_i_click_other_cards;
-    }
-}
 
 function display_stats(){
 
     $('#games_played_stat').text(games_played);
     $('#attempts_stat').text(attempts);
     console.log('number of attempts: ' + attempts);
-    accuracy = matches / attempts;
+
+    var accuracy_calculation = matches / attempts;
+    accuracy = accuracy_calculation;
     $('#accuracy_stat').text((accuracy * 100) + '%');
     console.log('number of accuracy IS ' + accuracy);
 }
