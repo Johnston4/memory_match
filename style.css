@@ -4,8 +4,8 @@
 }
 
 .calc:hover {
-    #transform: translate(20vw);
-    #transition-duration: 5s;
+    transform: translate(20vw);
+    transition-duration: 5s;
 }
 
 body {
