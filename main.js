@@ -60,6 +60,8 @@ function card_clicked(card_element) {
                 console.log('games played: ' + games_played);
                 display_stats();
                 console.log(alert('you win!'));
+                reset_stats();
+                reset_cards()
             }
             else {
                 console.log('pick another pair!');
@@ -73,7 +75,7 @@ function card_clicked(card_element) {
                 can_i_click_other_cards = true;
                 $(first_card_div_element).removeClass('hidden_cards');
                 $(second_card_div_element).removeClass('hidden_cards');
-            }, 2000);
+            }, 500);
             first_card_clicked = null;
             second_card_clicked = null;
         }
@@ -86,10 +88,13 @@ function display_stats(){
     $('#attempts_stat').text(attempts);
     console.log('number of attempts: ' + attempts);
 
-    var accuracy_calculation = matches / attempts;
-    accuracy = accuracy_calculation;
-    $('#accuracy_stat').text((accuracy * 100) + '%');
-    console.log('number of accuracy IS ' + accuracy);
+    var accuracy_calculation = (matches / attempts)*100;
+    accuracy = parseInt(accuracy_calculation);
+    if(attempts==0){
+        accuracy=0;
+    }
+    $('#accuracy_stat').text((accuracy) + '%');
+    console.log('number of accuracy IS ', accuracy);
 }
 
 function reset_stats() {
