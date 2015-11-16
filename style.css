@@ -67,8 +67,8 @@ body {
     background-color: rgba(0,0,0,.8);
     position: relative;
     float: left;
-    width: 50vw;
-    height: 50vh;
+    width: 60vw;
+    height: 60vh;
     margin: 0;
     padding: .5%;
     box-sizing: border-box;
@@ -76,19 +76,13 @@ body {
     -webkit-perspective: 900px;
 }
 
-#game-area .card  {
-    width: 100%;
+#game-area .card {
+    width: 16%;
     height: 31%;
     margin: .5%;
     position: relative;
     #display: inline-block;
     background-color: black;
-}
-
-.card {
-    #position: relative;
-    #display: inline-block;
-    #background-color: black;
 }
 
 .second-row {
