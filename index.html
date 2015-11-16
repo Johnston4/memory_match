@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="main.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css">
@@ -27,166 +28,188 @@
         <img src="images/calc-hd.gif" width="15%">
     </div>
 </div>
-<div class="stats-container" onload="display_stats()">
-    <div class="games-played">
-        <p class="label">Games Played</p>
-        <p class="value" id="games_played_stat"></p>
+<div class="container">
+    <div class="col-md-4">
+        <div class="stats-container" onload="display_stats()">
+            <div class="games-played">
+                <p class="label">Games Played</p>
+
+                <p class="value" id="games_played_stat"></p>
+            </div>
+            <div class="attempts">
+                <p class="label">Attempts</p>
+
+                <p class="value" id="attempts_stat"></p>
+            </div>
+            <div class="accuracy">
+                <p class="label">Accuracy</p>
+
+                <p class="value" id="accuracy_stat"></p>
+            </div>
+            <button class="reset" onclick="reset_clicked(this)">Reset Game</button>
+        </div>
     </div>
-    <div class="attempts">
-        <p class="label">Attempts</p>
-        <p class="value" id="attempts_stat"></p>
+    <div id="game-area" class="row">
+        <div class="col-md-2">
+            <div class="card">
+                <div class="front">
+                    <img class="card-front" src="images/sophie.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img class="card-front" src="images/sophie.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img class="card-front" src="images/howls-castle.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <div class="front">
+                    <img class="card-front" src="images/howls-castle.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img class="card-front" src="images/heen-dog.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img class="card-front" src="images/heen-dog.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card second-row">
+                <div class="front">
+                    <img class="card-front" src="images/howl.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card second-row">
+                <div class="front">
+                    <img class="card-front" src="images/howl.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card second-row">
+                <div class="front">
+                    <img class="card-front" src="images/calcifer-fire.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card second-row">
+                <div class="front">
+                    <img class="card-front" src="images/calcifer-fire.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card second-row">
+                <div class="front">
+                    <img class="card-front" src="images/turnip-head.png">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card second-row">
+                <div class="front">
+                    <img class="card-front" src="images/turnip-head.png">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card third-row">
+                <div class="front">
+                    <img class="card-front" src="images/markl.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card third-row">
+                <div class="front">
+                    <img class="card-front" src="images/markl.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card third-row">
+                <div class="front">
+                    <img class="card-front" src="images/witch.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card third-row">
+                <div class="front">
+                    <img class="card-front" src="images/witch.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card third-row">
+                <div class="front">
+                    <img class="card-front" src="images/sophie-old.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+            <div class="card third-row">
+                <div class="front">
+                    <img class="card-front" src="images/sophie-old.jpg">
+                </div>
+                <div class="back" onclick="card_clicked(this)">
+                    <img class="card-back" src="images/woodcard.jpg">
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="accuracy">
-        <p class="label">Accuracy</p>
-        <p class="value" id="accuracy_stat"></p>
-    </div>
-    <button class="reset" onclick="reset_clicked(this)">Reset Game</button>
 </div>
-<div id="game-area">
-    <div class="card">
-        <div class="front">
-            <img class="card-front" src="images/sophie.jpg">
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card">
-        <div class="front">
-            <img class="card-front" src="images/sophie.jpg">
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card">
-        <div class="front">
-            <img class="card-front" src="images/howls-castle.jpg">
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card">
-        <div class="front">
-            <img class="card-front" src="images/howls-castle.jpg">
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card">
-        <div class="front">
-            <img class="card-front" src="images/heen-dog.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card">
-        <div class="front">
-            <img class="card-front" src="images/heen-dog.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card second-row">
-        <div class="front">
-            <img class="card-front" src="images/howl.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card second-row">
-        <div class="front">
-            <img class="card-front" src="images/howl.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card second-row">
-        <div class="front">
-            <img class="card-front" src="images/calcifer-fire.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card second-row">
-        <div class="front">
-            <img class="card-front" src="images/calcifer-fire.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card second-row">
-        <div class="front">
-            <img class="card-front" src="images/turnip-head.png" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card second-row">
-        <div class="front">
-            <img class="card-front" src="images/turnip-head.png" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card third-row">
-        <div class="front">
-            <img class="card-front" src="images/markl.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card third-row">
-        <div class="front">
-            <img class="card-front" src="images/markl.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card third-row">
-        <div class="front">
-            <img class="card-front" src="images/witch.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card third-row">
-        <div class="front">
-            <img class="card-front" src="images/witch.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card third-row">
-        <div class="front">
-            <img class="card-front" src="images/sophie-old.jpg" >
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-    <div class="card third-row">
-        <div class="front">
-            <img class="card-front" src="images/sophie-old.jpg">
-        </div>
-        <div class="back" onclick="card_clicked(this)">
-            <img class="card-back" src="images/woodcard.jpg">
-        </div>
-    </div>
-</div>
+
+
 </body>
 </html>
