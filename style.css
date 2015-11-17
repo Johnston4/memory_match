@@ -14,6 +14,7 @@ body {
     background: url('images/howl-background-lg2.jpg') no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
+    overflow: hidden;
 }
 
 .hidden_cards {
@@ -60,15 +61,15 @@ body {
     width: 15%;
     height: 80vh;
     color: white;
+
 }
 
 #game-area {
     border-radius: 10px;
     background-color: rgba(0,0,0,.8);
     position: relative;
-    float: left;
     width: 60vw;
-    height: 60vh;
+    height: 70vh;
     margin: 0;
     padding: .5%;
     box-sizing: border-box;
@@ -77,14 +78,17 @@ body {
 }
 
 #game-area .card {
-    width: 16%;
-    height: 31%;
-    margin: .5%;
+    width: 100%;
+    height: 32%;
+    margin: 5%;
     position: relative;
     #display: inline-block;
     background-color: black;
 }
-
+#game-area .column {
+    height: 100%;
+    width: 16.5%;
+}
 .second-row {
     position: relative;
 }
