@@ -34,7 +34,6 @@ function card_clicked(card_element) {
         console.log('first card clicked is ' + first_card_clicked);
     }
     else {
-
         console.log('this is the second card we clicked');
         attempts += 1;
         console.log('number of attempts:' + attempts);
