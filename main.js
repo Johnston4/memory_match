@@ -4,7 +4,6 @@ var total_possible_matches = 9;
 var match_counter = 0;
 var first_card_div_element = null;
 var second_card_div_element = null;
-var noMatch = false;
 var matches = 0;
 var attempts = 0;
 var accuracy = 0;
@@ -12,12 +11,10 @@ var games_played = 0;
 var can_i_click_other_cards = true;
 var card_array = [];
 
-
 $(document).ready(function () {
     howl_card_img_srcs();
     display_stats();
     dynamic_board_loop();
-
 });
 
 function card_clicked(card_element) {
@@ -121,8 +118,10 @@ function reset_clicked() {
 }
 
 function reset_cards() {
-    $('.back').removeClass('hidden_cards');
+    $('#game-area').empty();
+    dynamic_board_loop();
 }
+
 function howl_card_img_srcs() {
     for(var i = 0; i<2; i++){
         card_array.push('images/sophie.jpg', 'images/howl.jpg', 'images/howls-castle.jpg', 'images/markl.jpg', 'images/sophie-old.jpg', 'images/turnip-head.png', 'images/witch.jpg', 'images/heen-dog.jpg', 'images/calcifer-fire.jpg');
