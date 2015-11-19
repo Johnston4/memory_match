@@ -109,7 +109,7 @@ function reset_stats() {
 }
 
 function reset_clicked() {
-    if (match_counter != total_possible_matches) {
+    if (match_counter != total_possible_matches){
         games_played += 1;
     }
     reset_stats();
