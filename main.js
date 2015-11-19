@@ -11,12 +11,13 @@ var accuracy = 0;
 var games_played = 0;
 var can_i_click_other_cards = true;
 var card_array = [];
-var random_array_indices=[];
+
 
 $(document).ready(function () {
+    howl_card_img_srcs();
     display_stats();
     dynamic_board_loop();
-    howl_card_img_srcs()
+
 });
 
 function card_clicked(card_element) {
@@ -26,7 +27,7 @@ function card_clicked(card_element) {
     console.log('Can I click other cards? ' + can_i_click_other_cards);
     console.log("card_element is " + card_element);
     $(card_element).addClass('hidden_cards');
-    var front_card = $(card_element).prev().find('img');
+    var front_card = $(card_element).parent().prev().children();
     var first_front_card_image = $(front_card).attr('src');
     console.log('first_front_card_image IS ' + first_front_card_image);
     if (first_card_clicked == null) {
@@ -42,7 +43,7 @@ function card_clicked(card_element) {
         console.log('number of attempts:' + attempts);
         display_stats();
         second_card_div_element = card_element;
-        var second_card = $(card_element).prev().find('img');
+        var second_card = $(card_element).parent().prev().children();
         var second_front_card_image = $(second_card).attr('src');
         console.log('second_front_card_image is ' + second_front_card_image);
         second_card_clicked = second_front_card_image;
@@ -124,22 +125,26 @@ function reset_cards() {
 }
 function howl_card_img_srcs() {
     for(var i = 0; i<2; i++){
-        card_array.push('images/sophie.jpg', 'images/howl.jpg', 'images/howls-castle.jpg', 'images/markl.jpg', 'images/sophie-old.jpg', 'images/turnip-head.jpg', 'images/witch.jpg', 'images/heen-dog.jpg', 'images/calcifer-fire.jpg');
+        card_array.push('images/sophie.jpg', 'images/howl.jpg', 'images/howls-castle.jpg', 'images/markl.jpg', 'images/sophie-old.jpg', 'images/turnip-head.png', 'images/witch.jpg', 'images/heen-dog.jpg', 'images/calcifer-fire.jpg');
         console.log('card_array: ', card_array);
     }
 }
 
-function randomize_cards() {
-    var card = Math.floor((Math.random() * card_array.length) + 1);
-
-}
 
 function dynamic_board_loop() {
-    for (var i = 0; i <= 5; i++) {
+    var num_columns = 6;
+    var cards_per_column = 3;
+    var random_array_indices=[];
+    for(var i = 0; i < card_array.length; i++){
+        random_array_indices.push(i);
+    }
+    for (var i = 0; i < num_columns; i++) {
         var column = $('<div>').addClass('col-xs-1 column');
         $(column).appendTo('#game-area');
-        for (var j = 0; j <= 2; j++) {
-            var front_img = $('<img>').addClass("card-front").attr('src', 'images/sophie.jpg');
+        for (var j = 0; j < cards_per_column; j++) {
+            var random_index = Math.floor((Math.random() * random_array_indices.length));
+            var front_img = $('<img>').addClass("card-front").attr('src', card_array[random_array_indices[random_index]]);
+            random_array_indices.splice(random_index,1);
             var back_img = $('<img>', {
                 class: 'card-back',
                 src: 'images/woodcard.jpg',
