@@ -10,11 +10,11 @@ var accuracy = 0;
 var games_played = 0;
 var can_i_click_other_cards = true;
 var card_array = [];
-
+var card_back_src = '';
 $(document).ready(function () {
     howl_card_img_srcs();
     display_stats();
-    dynamic_board_loop();
+
 });
 
 function card_clicked(card_element) {
@@ -121,13 +121,32 @@ function reset_cards() {
     dynamic_board_loop();
 }
 
+function chibi_card_img_srcs() {
+    card_array = [];
+    reset_stats();
+    for (var i = 0; i < 2; i++) {
+        card_array.push('miya-match/ashitaka.jpg', 'miya-match/catbus.jpg', 'miya-match/haku.jpg', 'miya-match/howl.jpg', 'miya-match/jiji.jpg', 'miya-match/mononoke.jpg', 'miya-match/ponyo.jpg', 'miya-match/shishigami.jpg', 'miya-match/susuwatari.jpg');
+        //empty card array
+        //loop and push new card srcs to card array
+        //call dynamic board loop
+        //make global variable for back-card img src and
+    }
+    $('#game-area').empty();
+    card_back_src = 'miya-match/ghibli.jpg';
+    dynamic_board_loop();
+}
+
 function howl_card_img_srcs() {
+    card_array = [];
+    reset_stats();
     for(var i = 0; i<2; i++){
         card_array.push('images/sophie.jpg', 'images/howl.jpg', 'images/howls-castle.jpg', 'images/markl.jpg', 'images/sophie-old.jpg', 'images/turnip-head.png', 'images/witch.jpg', 'images/heen-dog.jpg', 'images/calcifer-fire.jpg');
         console.log('card_array: ', card_array);
     }
+    $('#game-area').empty();
+    card_back_src = 'images/woodcard.jpg';
+    dynamic_board_loop();
 }
-
 
 function dynamic_board_loop() {
     var num_columns = 6;
@@ -145,7 +164,7 @@ function dynamic_board_loop() {
             random_array_indices.splice(random_index,1);
             var back_img = $('<img>', {
                 class: 'card-back',
-                src: 'images/woodcard.jpg',
+                src: card_back_src,
                 onclick: "card_clicked(this)"
             });
             var front_div = $('<div>').addClass('front');
