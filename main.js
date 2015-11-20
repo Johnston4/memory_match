@@ -125,14 +125,14 @@ function chibi_card_img_srcs() {
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
-        card_array.push('miya-match/ashitaka.jpg', 'miya-match/catbus.jpg', 'miya-match/haku.jpg', 'miya-match/howl.jpg', 'miya-match/jiji.jpg', 'miya-match/mononoke.jpg', 'miya-match/ponyo.jpg', 'miya-match/shishigami.jpg', 'miya-match/susuwatari.jpg');
+        card_array.push('chibi-match/ashitaka.jpg', 'chibi-match/catbus.jpg', 'chibi-match/haku.jpg', 'chibi-match/howl.jpg', 'chibi-match/jiji.jpg', 'chibi-match/mononoke.jpg', 'chibi-match/ponyo.jpg', 'chibi-match/shishigami.jpg', 'chibi-match/susuwatari.jpg');
         //empty card array
         //loop and push new card srcs to card array
         //call dynamic board loop
-        //make global variable for back-card img src and
+        //make global variable for back-card img src and...
     }
     $('#game-area').empty();
-    card_back_src = 'miya-match/ghibli.jpg';
+    card_back_src = 'chibi-match/ghibli.jpg';
     dynamic_board_loop();
 }
 
