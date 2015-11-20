@@ -122,6 +122,8 @@ function reset_cards() {
 }
 
 function chibi_card_img_srcs() {
+    $('body').css('background', 'url("chibi-match/chibi-background.jpg")');
+
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
@@ -131,24 +133,27 @@ function chibi_card_img_srcs() {
         //call dynamic board loop
         //make global variable for back-card img src and...
     }
-    $('#game-area').empty();
+    $('#game-area').empty().css('background-color', 'rgba(0,89,178, .8)');
     card_back_src = 'chibi-match/ghibli.jpg';
     dynamic_board_loop();
 }
 
 function howl_card_img_srcs() {
+    $('body').css('background', 'url("images/howl-background-lg2.jpg")');
     card_array = [];
     reset_stats();
     for(var i = 0; i<2; i++){
         card_array.push('images/sophie.jpg', 'images/howl.jpg', 'images/howls-castle.jpg', 'images/markl.jpg', 'images/sophie-old.jpg', 'images/turnip-head.png', 'images/witch.jpg', 'images/heen-dog.jpg', 'images/calcifer-fire.jpg');
         console.log('card_array: ', card_array);
     }
-    $('#game-area').empty();
+    $('#game-area').empty().css('background-color', 'rgba(0, 0, 0, .8)');
     card_back_src = 'images/woodcard.jpg';
     dynamic_board_loop();
 }
 
 function dynamic_board_loop() {
+    first_card_clicked = null;
+    second_card_clicked = null;
     var num_columns = 6;
     var cards_per_column = 3;
     var random_array_indices=[];

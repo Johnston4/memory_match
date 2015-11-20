@@ -11,7 +11,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    background: url('images/howl-background-lg2.jpg') no-repeat;
+    /*background: url('images/howl-background-lg2.jpg') no-repeat;*/
     -webkit-background-size: cover;
     background-size: cover;
     overflow: hidden;
@@ -61,8 +61,8 @@ body {
 
 #game-area {
     border-radius: 10px;
-    background-color: rgba(0,0,0,.8);
-    float: left;
+    #background-color: rgba(0, 0, 0, .8);
+    float: right;
     #position: relative;
     width: 80vw;
     height: 70vh;
@@ -75,7 +75,7 @@ body {
 
 #game-area .card {
     width: 100%;
-    height: 32%;
+    height: 31%;
     margin: 5%;
     position: relative;
     background-color: black;
@@ -99,4 +99,30 @@ body {
     width: 100%;
     height: 100%;
     z-index: 99;
+}
+
+.mobile_notice {
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    #game-area, .stats-container, .btn, .calc, .header-links {
+        display: none;
+    }
+    .header-container{
+        height: 40%;
+
+    }
+    .logo {
+        width: 100%;
+        position: relative;
+    }
+    .mobile_notice {
+        display: block;
+        color: white;
+        font-size: 2.5em;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .8);
+
+        height: 100vh;
+    }
 }
