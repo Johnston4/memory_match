@@ -109,7 +109,7 @@ function reset_stats() {
 }
 
 function reset_clicked() {
-    if (match_counter != total_possible_matches){
+    if (match_counter != total_possible_matches) {
         games_played += 1;
     }
     reset_stats();
@@ -128,10 +128,6 @@ function chibi_card_img_srcs() {
     reset_stats();
     for (var i = 0; i < 2; i++) {
         card_array.push('chibi-match/ashitaka.jpg', 'chibi-match/catbus.jpg', 'chibi-match/haku.jpg', 'chibi-match/howl.jpg', 'chibi-match/jiji.jpg', 'chibi-match/mononoke.jpg', 'chibi-match/ponyo.jpg', 'chibi-match/shishigami.jpg', 'chibi-match/susuwatari.jpg');
-        //empty card array
-        //loop and push new card srcs to card array
-        //call dynamic board loop
-        //make global variable for back-card img src and...
     }
     $('#game-area').empty().css('background-color', 'rgba(0,89,178, .8)');
     card_back_src = 'chibi-match/ghibli.jpg';
@@ -142,7 +138,7 @@ function howl_card_img_srcs() {
     $('body').css('background', 'url("images/howl-background-lg2.jpg")');
     card_array = [];
     reset_stats();
-    for(var i = 0; i<2; i++){
+    for (var i = 0; i < 2; i++) {
         card_array.push('images/sophie.jpg', 'images/howl.jpg', 'images/howls-castle.jpg', 'images/markl.jpg', 'images/sophie-old.jpg', 'images/turnip-head.png', 'images/witch.jpg', 'images/heen-dog.jpg', 'images/calcifer-fire.jpg');
         console.log('card_array: ', card_array);
     }
@@ -156,8 +152,8 @@ function dynamic_board_loop() {
     second_card_clicked = null;
     var num_columns = 6;
     var cards_per_column = 3;
-    var random_array_indices=[];
-    for(var i = 0; i < card_array.length; i++){
+    var random_array_indices = [];
+    for (var i = 0; i < card_array.length; i++) {
         random_array_indices.push(i);
     }
     for (var i = 0; i < num_columns; i++) {
@@ -166,7 +162,7 @@ function dynamic_board_loop() {
         for (var j = 0; j < cards_per_column; j++) {
             var random_index = Math.floor((Math.random() * random_array_indices.length));
             var front_img = $('<img>').addClass("card-front").attr('src', card_array[random_array_indices[random_index]]);
-            random_array_indices.splice(random_index,1);
+            random_array_indices.splice(random_index, 1);
             var back_img = $('<img>', {
                 class: 'card-back',
                 src: card_back_src,
