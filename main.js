@@ -63,7 +63,7 @@ function card_clicked(card_element) {
                 display_stats();
                 console.log(alert('you win!'));
                 reset_stats();
-                reset_cards()
+                reset_cards();
             }
             else {
                 console.log('pick another pair!');
@@ -122,8 +122,7 @@ function reset_cards() {
 }
 
 function chibi_card_img_srcs() {
-    $('body').css('background', 'url("chibi-match/chibi-background.jpg")');
-
+    $('body').css({'background':'url("chibi-match/chibi-background.jpg; no-repeat")'});
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
