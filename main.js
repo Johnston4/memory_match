@@ -122,7 +122,8 @@ function reset_cards() {
 }
 
 function chibi_card_img_srcs() {
-    $('body').css({'background':'url("chibi-match/chibi-background.jpg; no-repeat")'});
+    $('body').css('background', 'url("chibi-match/chibi-background.jpg")');
+    $('.calc').hide();
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {

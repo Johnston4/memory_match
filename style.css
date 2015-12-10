@@ -24,11 +24,11 @@ body {
 .header-container {
     position: relative;
     width: 100vw;
-    height: 20vh;
+    height: 30vh;
 }
 
 .logo {
-    width: 15%;
+    width: 25%;
     height: auto;
     float: left;
 }
@@ -52,11 +52,17 @@ body {
 }
 
 .stats-container {
+    background-image: url('images/scroll-stats.png');
+    background-repeat: no-repeat;
+    background-size: contain;
     float: left;
     display: inline;
-    width: 10%;
-    height: 80vh;
+    width: 20vw;
+    height: 60vh;
     color: white;
+    font-size: 2em;
+    text-align: center;
+    padding: 20%;
 }
 
 #game-area {
@@ -64,13 +70,16 @@ body {
     #background-color: rgba(0, 0, 0, .8);
     float: right;
     #position: relative;
-    width: 80vw;
+    width: 70vw;
     height: 70vh;
     margin: 0;
     padding: .5%;
     box-sizing: border-box;
     perspective: 900px;
     -webkit-perspective: 900px;
+}
+.container-fluid {
+    padding: 0;
 }
 
 #game-area .card {
