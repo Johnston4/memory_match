@@ -52,7 +52,6 @@ body {
 }
 
 .stats-container {
-    background-image: url('images/scroll-stats.png');
     background-repeat: no-repeat;
     background-size: contain;
     float: left;
@@ -60,7 +59,7 @@ body {
     width: 20vw;
     height: 60vh;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     padding: 20%;
 }

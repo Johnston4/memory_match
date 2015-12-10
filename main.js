@@ -123,6 +123,7 @@ function reset_cards() {
 
 function chibi_card_img_srcs() {
     $('body').css('background', 'url("chibi-match/chibi-background.jpg")');
+    $('.stats-container').css('background-image', 'url("chibi-match/leaf-stats.png")');
     $('.calc').hide();
     card_array = [];
     reset_stats();
@@ -136,6 +137,7 @@ function chibi_card_img_srcs() {
 
 function howl_card_img_srcs() {
     $('body').css('background', 'url("images/howl-background-lg2.jpg")');
+    $('.stats-container').css('background-image', 'url("images/scroll-stats.png")');
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
