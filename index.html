@@ -30,6 +30,9 @@
         <li>
             <button class="reset btn btn-success btn-md" onclick="howl_card_img_srcs()">Play Howl Match!</button>
         </li>
+        <li>
+            <button class="reset btn btn-success btn-md" onclick="magic_card_img_srcs()">Play Magic Match</button>
+        </li>
     </ul>
     <div class="calc">
         <img src="images/calc-hd.gif" width="15%">
@@ -40,14 +43,17 @@
         <div class="stats-container" onload="display_stats()">
             <div class="games-played">
                 <p class="label">Games Played</p>
+
                 <p class="value" id="games_played_stat"></p>
             </div>
             <div class="attempts">
                 <p class="label">Attempts</p>
+
                 <p class="value" id="attempts_stat"></p>
             </div>
             <div class="accuracy">
                 <p class="label">Accuracy</p>
+
                 <p class="value" id="accuracy_stat"></p>
             </div>
             <button class="reset btn btn-danger btn-md" onclick="reset_clicked(this)">Reset Game</button>

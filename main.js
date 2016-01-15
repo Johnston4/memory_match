@@ -149,6 +149,21 @@ function howl_card_img_srcs() {
     dynamic_board_loop();
 }
 
+function magic_card_img_srcs() {
+    $('body').css('background', 'url("magic/pattern_background.png")');
+    $('.stats-container').css('background-image', 'url("images/scroll-stats.png")');
+    card_array = [];
+    reset_stats();
+    for (var i = 0; i < 2; i++) {
+        card_array.push('magic/ace_clubs.png', 'magic/two_clubs.png', 'magic/three_clubs.png', 'magic/four_diamonds.png', 'magic/five_diamonds.png', 'magic/six_hearts.png', 'magic/seven_hearts.png', 'magic/eight_spades.png', 'magic/nine_spades.png');
+        console.log('card_array: ', card_array);
+    }
+    $('#game-area').empty().css('background-color', 'rgba(0, 0, 0, .8)');
+    card_back_src = 'magic/magic_back.png';
+    dynamic_board_loop();
+}
+
+
 function dynamic_board_loop() {
     first_card_clicked = null;
     second_card_clicked = null;
