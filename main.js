@@ -125,6 +125,9 @@ function chibi_card_img_srcs() {
     $('body').css('background', 'url("chibi-match/chibi-background.jpg")');
     $('.stats-container').css('background-image', 'url("chibi-match/leaf-stats.png")');
     $('.calc').hide();
+    $('.games-played').css('background-color', 'rgba(0,89,178, .8)');
+    $('.attempts').css('background-color', 'rgba(0,89,178, .8)');
+    $('.accuracy').css('background-color', 'rgba(0,89,178, .8)');
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
@@ -138,6 +141,9 @@ function chibi_card_img_srcs() {
 function howl_card_img_srcs() {
     $('body').css('background', 'url("images/howl-background-lg2.jpg")');
     $('.stats-container').css('background-image', 'url("images/scroll-stats.png")');
+    $('.games-played').css('background-color', 'rgba(0, 0, 0, .8)');
+    $('.attempts').css('background-color', 'rgba(0, 0, 0, .8)');
+    $('.accuracy').css('background-color', 'rgba(0, 0, 0, .8)');
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
@@ -151,7 +157,11 @@ function howl_card_img_srcs() {
 
 function magic_card_img_srcs() {
     $('body').css('background', 'url("magic/pattern_background.png")');
-    $('.stats-container').css('background-image', 'url("images/scroll-stats.png")');
+    $('.stats-container').css('background-image', 'url("magic/pokerchips_stats.png")');
+    $('.games-played').css('background-color', 'rgba(0, 0, 0, .8)');
+    $('.attempts').css('background-color', 'rgba(0, 0, 0, .8)');
+    $('.accuracy').css('background-color', 'rgba(0, 0, 0, .8)');
+    $('.calc').hide();
     card_array = [];
     reset_stats();
     for (var i = 0; i < 2; i++) {
